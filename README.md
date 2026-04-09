@@ -1,5 +1,8 @@
 # claimcheck
 
+[![crates.io](https://img.shields.io/crates/v/claimcheck.svg)](https://crates.io/crates/claimcheck)
+[![CI](https://github.com/ojuschugh1/claimcheck/actions/workflows/ci.yml/badge.svg)](https://github.com/ojuschugh1/claimcheck/actions/workflows/ci.yml)
+
 Verify whether an AI coding agent actually did what it claimed.
 
 claimcheck parses an agent session transcript, extracts every concrete claim the agent made (files created, packages installed, tests run, bugs fixed, counts of changes), and checks each one against the real filesystem, git history, and lockfiles. The result is a truth score and a per-claim PASS / FAIL / UNVERIFIABLE report.
@@ -17,17 +20,19 @@ AI agents frequently overclaim. They say "I created src/auth.ts" when the file d
 ## Install
 
 ```sh
-cargo install --path .
+cargo install claimcheck
 ```
 
-Or build a release binary directly:
+Requires Rust 1.70+ and `git` in PATH. If you don't have Rust installed, get it from [rustup.rs](https://rustup.rs).
+
+Or build from source:
 
 ```sh
+git clone https://github.com/ojuschugh1/claimcheck
+cd claimcheck
 cargo build --release
 # binary at target/release/claimcheck
 ```
-
-Requires Rust 1.70+ and `git` in PATH.
 
 ---
 
