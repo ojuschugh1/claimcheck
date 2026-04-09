@@ -1,0 +1,2 @@
+{"role":"user","content":"Add a database layer"}
+{"role":"assistant","content":"I created src/db/connection.rs with the connection pool.\n\nI created src/db/migrations.rs with the schema migrations.\n\nI installed diesel for the ORM — it's in Cargo.lock.\n\nI edited 10 files in total.\n\nAll 42 tests pass."}
